@@ -46,3 +46,7 @@ under scripts in package.json add =>
 "build": "rimraf dist && npx tsc",
 "start" : "npm run build && node dist/index.ts",
 "dev" : "npm run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index.ts\"",
+
+-------------------------COMMAND FOR RESETTING DB ID----------------------
+command for resetting id in database: 
+`SELECT setval(pg_get_serial_sequence('"[DATA_MODEL_NAME_HERE]"', 'id'), coalesce(max(id)+1, 1), false) FROM "[DATA_MODEL_NAME_HERE]";`
