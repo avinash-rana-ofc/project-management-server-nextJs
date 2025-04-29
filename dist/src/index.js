@@ -12,6 +12,7 @@ const morgan_1 = __importDefault(require("morgan"));
 /* ROUTE IMPORTS */
 //import router from "./routes/projectRoutes";
 const projectRoutes_1 = __importDefault(require("./routes/projectRoutes"));
+const taskRoutes_1 = __importDefault(require("./routes/taskRoutes"));
 /* CONFIGURATIONS */
 dotenv_1.default.config();
 const app = (0, express_1.default)();
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
     res.send("This is home route");
 });
 app.use("/projects", projectRoutes_1.default);
+app.use("/tasks", taskRoutes_1.default);
 console.log("PORT from env:", process.env.PORT); // Should print 8000
 /* SERVER */
 const port = Number(process.env.PORT) || 3000;

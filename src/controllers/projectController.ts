@@ -10,8 +10,8 @@ export const getProjects = async(
     try {
         const projects = await prisma.project.findMany();
         res.json(projects);
-    } catch (error) {
-        res.status(500).json({message : "Error retrieving projects"});
+    } catch (error : any) {
+        res.status(500).json({message : `Error retrieving projects ${error.message}`});
     }
 };
 
@@ -34,4 +34,5 @@ export const createProject = async(
     } catch (error: any) {
         res.status(500).json({message : `Error creating the project: ${error}`})
     }
-}
+};
+

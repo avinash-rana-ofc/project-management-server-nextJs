@@ -20,6 +20,7 @@ Edit schema.prisma and add all models and relations
 goto package.json => add "seed" : "ts-node prisma/seed.ts" in scripts. This will identify and seed the data we have
 -------------------------Database Connection----------------
 Now create .env in root directory and add => DATABASE_URL="postgresql://username:password@servername:port/dtabasename?schema=public"
+In .env file never use semicolon.
 
 Now ==> npx prisma generate => to generate and connect prsima database
 then ==> npx prisma migrate dev --name init ==> to load and migrate data
